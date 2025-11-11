@@ -1,0 +1,14 @@
+<div class="container">
+    <h1><%= @list.name %> Movies</h1>
+    <div class="d-flex justify-content-space-between align-items-center flex-wrap">
+        <% @list.movies.each do |movie| %>
+            <h3><%= movie.title%></h3>
+            <p><%= movie.overview %></p>
+            <p><%= image_tag movie.poster_url, class: "img-fluid" %></p>
+            <p>Rating: <%= movie.rating %></p>
+            <p>Comment: <%= movie.bookmarks.find_by(list: @list).comment %></p>
+        <% end %>
+    </div>
+    <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-flat" %>
+    <%= link_to "Back to Lists", lists_path, class: "btn btn-flat" %>
+</div>
