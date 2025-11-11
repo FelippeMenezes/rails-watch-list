@@ -15,6 +15,15 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.destroy
+      redirect_to list_path(@bookmark.list)
+    else
+      render :show, status: :unprocessable_content
+    end
+  end
+
   private
 
   def bookmark_params

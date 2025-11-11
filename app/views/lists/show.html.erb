@@ -23,7 +23,7 @@
                     <p class="movie-overview"><%= movie.overview %></p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div><i class="fa-solid fa-quote-left fa-xl"></i> <%= movie.bookmarks.find_by(list: @list).comment %></div>
-                        <%= link_to "Delete", "#", class: "btn btn-link text-decoration-none text-danger" %>
+                        <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-link text-decoration-none text-danger" %>
                     </div>
                 </div>
             </div>
