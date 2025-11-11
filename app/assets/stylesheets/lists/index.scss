@@ -1,0 +1,74 @@
+.lists-index {
+    background-image: url('room.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    background-color: black;
+    color: white;
+    padding-top: 100px;
+}
+
+.create-list {
+    color: white;
+
+    &:hover {
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0px 2px 10px rgb(121, 121, 121);
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+    .cards {
+    grid-template-columns: 1fr;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .cards {
+    grid-template-columns: 1fr;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .cards {
+    grid-template-columns: 1fr 1fr;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.card-category {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: black;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}

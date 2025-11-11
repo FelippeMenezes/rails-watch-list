@@ -1,12 +1,18 @@
-<div class="container">
+<div class="lists-index d-flex justify-content-center align-items-center">
     <h1>Save any kind of movies</h1>
-    <div>
-        <h3>My Lists</h3>
+</div>
+<div class="container mt-5">
+    <div class=" d-flex justify-content-between">
+        <h3 class="text-center">My Lists</h3>
+        <%= link_to "Create a movie list", new_list_path, class: "create-list btn btn-success" %>
+    </div>
+    <div class="cards m-5">
         <% @lists.each do |list| %>
             <%= link_to list_path(list), class:"text-decoration-none" do %>
+                <div class="card-category d-flex justify-content-center align-items-center mb-3 p-3">
                 <%= list.name %>
+                </div>
             <% end %>
         <% end %>
-    <div>
-  <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+    </div>
 </div>
